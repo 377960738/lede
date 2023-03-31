@@ -224,7 +224,7 @@ jobs:
           CONFIG_DEFAULT_luci-app-ddns=y
           CONFIG_DEFAULT_luci-app-filetransfer=y
           CONFIG_DEFAULT_luci-app-ipsec-vpnd=y
-          CONFIG_DEFAULT_luci-app-nlbwmon=y
+          # CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_DEFAULT_luci-app-ssr-plus=y
           CONFIG_DEFAULT_luci-app-turboacc=y
           CONFIG_DEFAULT_luci-app-unblockmusic=y
@@ -5035,7 +5035,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-netdata is not set
           CONFIG_PACKAGE_luci-app-nfs=y
           # CONFIG_PACKAGE_luci-app-nft-qos is not set
-          CONFIG_PACKAGE_luci-app-nlbwmon=y
+          # CONFIG_PACKAGE_luci-app-nlbwmon=y
           # CONFIG_PACKAGE_luci-app-noddos is not set
           # CONFIG_PACKAGE_luci-app-nps is not set
           CONFIG_PACKAGE_luci-app-ntpc=y
@@ -5480,7 +5480,7 @@ jobs:
           CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ja is not set
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ru is not set
-          CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
+          # CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-ntpc-ca is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-cs is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-de is not set
@@ -6949,7 +6949,7 @@ jobs:
           # CONFIG_PACKAGE_netstinky is not set
           # CONFIG_PACKAGE_nextdns is not set
           # CONFIG_PACKAGE_nfdump is not set
-          CONFIG_PACKAGE_nlbwmon=y
+          # CONFIG_PACKAGE_nlbwmon=y
           # CONFIG_PACKAGE_noddos is not set
           # CONFIG_PACKAGE_noping is not set
           # CONFIG_PACKAGE_npc is not set
