@@ -5480,7 +5480,7 @@ jobs:
           CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ja is not set
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ru is not set
-          # CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
+          CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-ntpc-ca is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-cs is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-de is not set
@@ -7018,7 +7018,7 @@ jobs:
           # CONFIG_PACKAGE_samba4-admin is not set
           # CONFIG_PACKAGE_samba4-client is not set
           CONFIG_PACKAGE_samba4-libs=m
-          CONFIG_PACKAGE_samba4-server=y
+          # CONFIG_PACKAGE_samba4-server=y
           CONFIG_SAMBA4_SERVER_WSDD2=y
           CONFIG_SAMBA4_SERVER_NETBIOS=y
           CONFIG_SAMBA4_SERVER_AVAHI=y
