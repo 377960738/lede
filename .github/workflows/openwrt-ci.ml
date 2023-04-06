@@ -5099,7 +5099,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=y
           # CONFIG_PACKAGE_luci-app-rp-pppoe-server is not set
           CONFIG_PACKAGE_luci-app-samba=y
-          CONFIG_PACKAGE_luci-app-samba4=y
+          # CONFIG_PACKAGE_luci-app-samba4=y
           # CONFIG_PACKAGE_luci-app-serverchan is not set
           CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
           # CONFIG_PACKAGE_luci-app-shairplay is not set
@@ -5632,7 +5632,7 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-samba4-tr is not set
           # CONFIG_PACKAGE_luci-i18n-samba4-uk is not set
           # CONFIG_PACKAGE_luci-i18n-samba4-vi is not set
-          CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
+          # CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-samba4-zh-tw is not set
           # CONFIG_PACKAGE_luci-i18n-simple-adblock-ja is not set
           # CONFIG_PACKAGE_luci-i18n-simple-adblock-pt is not set
@@ -7017,7 +7017,7 @@ jobs:
           CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
           # CONFIG_PACKAGE_samba4-admin is not set
           # CONFIG_PACKAGE_samba4-client is not set
-          CONFIG_PACKAGE_samba4-libs=m
+          # CONFIG_PACKAGE_samba4-libs=m
           # CONFIG_PACKAGE_samba4-server=y
           CONFIG_SAMBA4_SERVER_WSDD2=y
           CONFIG_SAMBA4_SERVER_NETBIOS=y
