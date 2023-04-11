@@ -35,10 +35,10 @@ jobs:
           docker rmi `docker images -q`
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
           sudo -E apt-mark hold grub-efi-amd64-signed
-          sudo -E apt update
+          sudo -E apt update -y
           sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
-          sudo -E apt -y full-upgrade
-          sudo -E apt -y install ack antlr3 aria2 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python3 python3-pip libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+          sudo -E apt install -y ack antlr3 aria2 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+          sudo -E apt full-upgrade -y
           sudo -E systemctl daemon-reload
           sudo -E apt -y autoremove --purge
           sudo -E apt clean
@@ -224,7 +224,7 @@ jobs:
           CONFIG_DEFAULT_luci-app-ddns=y
           CONFIG_DEFAULT_luci-app-filetransfer=y
           CONFIG_DEFAULT_luci-app-ipsec-vpnd=y
-          # CONFIG_DEFAULT_luci-app-nlbwmon=y
+          CONFIG_DEFAULT_luci-app-nlbwmon=y
           CONFIG_DEFAULT_luci-app-ssr-plus=y
           CONFIG_DEFAULT_luci-app-turboacc=y
           CONFIG_DEFAULT_luci-app-unblockmusic=y
@@ -1967,6 +1967,7 @@ jobs:
           # CONFIG_PACKAGE_ar3k-firmware is not set
           CONFIG_PACKAGE_ath10k-board-qca4019=y
           # CONFIG_PACKAGE_ath10k-board-qca9377 is not set
+          # CONFIG_PACKAGE_ath10k-board-qca9377-sdio is not set
           # CONFIG_PACKAGE_ath10k-board-qca9887 is not set
           # CONFIG_PACKAGE_ath10k-board-qca9888 is not set
           # CONFIG_PACKAGE_ath10k-board-qca988x is not set
@@ -1978,6 +1979,7 @@ jobs:
           # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct-htt is not set
           # CONFIG_PACKAGE_ath10k-firmware-qca6174 is not set
           # CONFIG_PACKAGE_ath10k-firmware-qca9377 is not set
+          # CONFIG_PACKAGE_ath10k-firmware-qca9377-sdio is not set
           # CONFIG_PACKAGE_ath10k-firmware-qca9887 is not set
           # CONFIG_PACKAGE_ath10k-firmware-qca9887-ct is not set
           # CONFIG_PACKAGE_ath10k-firmware-qca9887-ct-full-htt is not set
@@ -2070,6 +2072,7 @@ jobs:
           # CONFIG_PACKAGE_mt7622bt-firmware is not set
           # CONFIG_PACKAGE_mt7921bt-firmware is not set
           # CONFIG_PACKAGE_mt7922bt-firmware is not set
+          # CONFIG_PACKAGE_mt7986-wo-firmware is not set
           # CONFIG_PACKAGE_mwifiex-pcie-firmware is not set
           # CONFIG_PACKAGE_mwifiex-sdio-firmware is not set
           # CONFIG_PACKAGE_mwl8k-firmware is not set
@@ -2118,15 +2121,19 @@ jobs:
           # CONFIG_PACKAGE_rtl8192de-firmware is not set
           # CONFIG_PACKAGE_rtl8192eu-firmware is not set
           # CONFIG_PACKAGE_rtl8192se-firmware is not set
-          # CONFIG_PACKAGE_rtl8192su-firmware is not set
           # CONFIG_PACKAGE_rtl8723au-firmware is not set
           # CONFIG_PACKAGE_rtl8723bu-firmware is not set
           # CONFIG_PACKAGE_rtl8723du-firmware is not set
+          # CONFIG_PACKAGE_rtl8761a-firmware is not set
+          # CONFIG_PACKAGE_rtl8761b-firmware is not set
+          # CONFIG_PACKAGE_rtl8761bu-firmware is not set
           # CONFIG_PACKAGE_rtl8821ae-firmware is not set
           # CONFIG_PACKAGE_rtl8821ce-firmware is not set
           # CONFIG_PACKAGE_rtl8822be-firmware is not set
           # CONFIG_PACKAGE_rtl8822ce-firmware is not set
-          # CONFIG_PACKAGE_rtw89-firmware is not set
+          # CONFIG_PACKAGE_rtl8852ae-firmware is not set
+          # CONFIG_PACKAGE_rtl8852be-firmware is not set
+          # CONFIG_PACKAGE_rtl8852ce-firmware is not set
           # CONFIG_PACKAGE_station-p2-firmware is not set
           # CONFIG_PACKAGE_ti-3410-firmware is not set
           # CONFIG_PACKAGE_ti-5052-firmware is not set
@@ -2266,7 +2273,7 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-autofs4=y
           CONFIG_PACKAGE_kmod-fs-btrfs=y
           CONFIG_PACKAGE_kmod-fs-cifs=y
-          # CONFIG_PACKAGE_kmod-fs-configfs is not set
+          CONFIG_PACKAGE_kmod-fs-configfs=y
           # CONFIG_PACKAGE_kmod-fs-cramfs is not set
           CONFIG_PACKAGE_kmod-fs-exfat=y
           CONFIG_PACKAGE_kmod-fs-exportfs=y
@@ -3061,7 +3068,6 @@ jobs:
           # CONFIG_PACKAGE_kmod-mwifiex-pcie is not set
           # CONFIG_PACKAGE_kmod-mwifiex-sdio is not set
           # CONFIG_PACKAGE_kmod-mwl8k is not set
-          # CONFIG_PACKAGE_kmod-net-rtl8192su is not set
           # CONFIG_PACKAGE_kmod-owl-loader is not set
           # CONFIG_PACKAGE_kmod-rsi91x is not set
           # CONFIG_PACKAGE_kmod-rsi91x-sdio is not set
@@ -3223,7 +3229,6 @@ jobs:
           #
           # Configuration
           #
-          # CONFIG_NODEJS_10 is not set
           # CONFIG_NODEJS_12 is not set
           # CONFIG_NODEJS_14 is not set
           CONFIG_NODEJS_16=y
@@ -3565,6 +3570,7 @@ jobs:
           # Rust
           #
           # CONFIG_PACKAGE_maturin is not set
+          # CONFIG_PACKAGE_rust is not set
           # end of Rust
 
           #
@@ -3575,12 +3581,6 @@ jobs:
 
           # CONFIG_PACKAGE_chicken-scheme-full is not set
           # CONFIG_PACKAGE_chicken-scheme-interpreter is not set
-          # CONFIG_PACKAGE_rust is not set
-          CONFIG_RUST_OPTION_CHECKING=y
-          CONFIG_RUST_ENABLE_NINJA=y
-          CONFIG_RUST_MISSING_TOOLS=y
-          CONFIG_RUST_OPTIMIZE_LLVM=y
-          CONFIG_RUST_MANAGE_SUBMODULES=y
           # CONFIG_PACKAGE_slsh is not set
           # end of Languages
 
@@ -4825,7 +4825,7 @@ jobs:
           # CONFIG_PACKAGE_libupnp-sample is not set
           # CONFIG_PACKAGE_libupnpp is not set
           # CONFIG_PACKAGE_liburcu is not set
-          CONFIG_PACKAGE_liburing=m
+          CONFIG_PACKAGE_liburing=y
           # CONFIG_PACKAGE_libusb-1.0 is not set
           # CONFIG_PACKAGE_libusb-compat is not set
           # CONFIG_PACKAGE_libustream-mbedtls is not set
@@ -4926,27 +4926,27 @@ jobs:
           #
           # Translations
           #
-          # CONFIG_LUCI_LANG_uk is not set
           # CONFIG_LUCI_LANG_hu is not set
           # CONFIG_LUCI_LANG_pt is not set
-          # CONFIG_LUCI_LANG_ro is not set
+          # CONFIG_LUCI_LANG_sk is not set
+          # CONFIG_LUCI_LANG_ko is not set
           # CONFIG_LUCI_LANG_en is not set
           # CONFIG_LUCI_LANG_el is not set
-          # CONFIG_LUCI_LANG_sk is not set
-          # CONFIG_LUCI_LANG_ja is not set
+          # CONFIG_LUCI_LANG_uk is not set
+          # CONFIG_LUCI_LANG_ru is not set
           # CONFIG_LUCI_LANG_vi is not set
-          # CONFIG_LUCI_LANG_he is not set
-          # CONFIG_LUCI_LANG_ko is not set
+          # CONFIG_LUCI_LANG_de is not set
+          # CONFIG_LUCI_LANG_ro is not set
+          # CONFIG_LUCI_LANG_pt-br is not set
           # CONFIG_LUCI_LANG_ms is not set
           # CONFIG_LUCI_LANG_pl is not set
           CONFIG_LUCI_LANG_zh-cn=y
           # CONFIG_LUCI_LANG_no is not set
-          # CONFIG_LUCI_LANG_de is not set
+          # CONFIG_LUCI_LANG_he is not set
           # CONFIG_LUCI_LANG_zh-tw is not set
           # CONFIG_LUCI_LANG_tr is not set
           # CONFIG_LUCI_LANG_sv is not set
-          # CONFIG_LUCI_LANG_ru is not set
-          # CONFIG_LUCI_LANG_pt-br is not set
+          # CONFIG_LUCI_LANG_ja is not set
           # CONFIG_LUCI_LANG_ca is not set
           # CONFIG_LUCI_LANG_es is not set
           # CONFIG_LUCI_LANG_cs is not set
@@ -4990,6 +4990,9 @@ jobs:
           # CONFIG_PACKAGE_luci-app-cjdns is not set
           # CONFIG_PACKAGE_luci-app-clamav is not set
           # CONFIG_PACKAGE_luci-app-commands is not set
+          # CONFIG_PACKAGE_luci-app-control-timewol is not set
+          # CONFIG_PACKAGE_luci-app-control-webrestriction is not set
+          # CONFIG_PACKAGE_luci-app-control-weburl is not set
           CONFIG_PACKAGE_luci-app-cpufreq=y
           # CONFIG_PACKAGE_luci-app-cshark is not set
           # CONFIG_PACKAGE_luci-app-dawn is not set
@@ -5010,6 +5013,8 @@ jobs:
           # CONFIG_PACKAGE_luci-app-dynapoint is not set
           # CONFIG_PACKAGE_luci-app-e2guardian is not set
           # CONFIG_PACKAGE_luci-app-easymesh is not set
+          CONFIG_PACKAGE_luci-app-fileassistant=y
+          CONFIG_PACKAGE_luci-app-filebrowser=y
           CONFIG_PACKAGE_luci-app-filetransfer=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-frpc=y
@@ -5035,7 +5040,8 @@ jobs:
           # CONFIG_PACKAGE_luci-app-netdata is not set
           CONFIG_PACKAGE_luci-app-nfs=y
           # CONFIG_PACKAGE_luci-app-nft-qos is not set
-          # CONFIG_PACKAGE_luci-app-nlbwmon=y
+          # CONFIG_PACKAGE_luci-app-nginx-pingos is not set
+          CONFIG_PACKAGE_luci-app-nlbwmon=y
           # CONFIG_PACKAGE_luci-app-noddos is not set
           # CONFIG_PACKAGE_luci-app-nps is not set
           CONFIG_PACKAGE_luci-app-ntpc=y
@@ -5058,12 +5064,12 @@ jobs:
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG is not set
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
+          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria is not set
+          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy is not set
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client=y
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=y
-          CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server=y
+          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
+          # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server is not set
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client=y
           # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server is not set
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
@@ -5081,6 +5087,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-phtunnel is not set
           # CONFIG_PACKAGE_luci-app-polipo is not set
           # CONFIG_PACKAGE_luci-app-pppoe-relay is not set
+          # CONFIG_PACKAGE_luci-app-pppoe-server is not set
           # CONFIG_PACKAGE_luci-app-pptp-server is not set
           # CONFIG_PACKAGE_luci-app-privoxy is not set
           # CONFIG_PACKAGE_luci-app-ps3netsrv is not set
@@ -5098,7 +5105,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui=y
           CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=y
           # CONFIG_PACKAGE_luci-app-rp-pppoe-server is not set
-          CONFIG_PACKAGE_luci-app-samba=y
+          # CONFIG_PACKAGE_luci-app-samba is not set
           CONFIG_PACKAGE_luci-app-samba4=y
           # CONFIG_PACKAGE_luci-app-serverchan is not set
           CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
@@ -5111,11 +5118,14 @@ jobs:
           # CONFIG_PACKAGE_luci-app-splash is not set
           # CONFIG_PACKAGE_luci-app-sqm is not set
           # CONFIG_PACKAGE_luci-app-squid is not set
+          # CONFIG_PACKAGE_luci-app-ssr-mudb-server is not set
           # CONFIG_PACKAGE_luci-app-ssrserver-python is not set
           # CONFIG_PACKAGE_luci-app-statistics is not set
           # CONFIG_PACKAGE_luci-app-syncdial is not set
+          # CONFIG_PACKAGE_luci-app-syncthing is not set
+          # CONFIG_PACKAGE_luci-app-timecontrol is not set
           # CONFIG_PACKAGE_luci-app-tinyproxy is not set
-          # CONFIG_PACKAGE_luci-app-transmission is not set
+          CONFIG_PACKAGE_luci-app-transmission=y
           # CONFIG_PACKAGE_luci-app-travelmate is not set
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-turboacc=y
@@ -5155,10 +5165,10 @@ jobs:
           # 4. Themes
           #
           CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-argon-mod=y
+          # CONFIG_PACKAGE_luci-theme-argon-mod is not set
           CONFIG_PACKAGE_luci-theme-bootstrap=y
           CONFIG_PACKAGE_luci-theme-design=y
-          CONFIG_PACKAGE_luci-theme-infinityfreedom=y
+          # CONFIG_PACKAGE_luci-theme-infinityfreedom is not set
           CONFIG_PACKAGE_luci-theme-material=y
           CONFIG_PACKAGE_luci-theme-netgear=y
           # end of 4. Themes
@@ -5395,6 +5405,7 @@ jobs:
           CONFIG_PACKAGE_luci-i18n-dnsforwarder-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
+          CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-firewall-ca is not set
           # CONFIG_PACKAGE_luci-i18n-firewall-cs is not set
@@ -5480,7 +5491,7 @@ jobs:
           CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ja is not set
           # CONFIG_PACKAGE_luci-i18n-nlbwmon-ru is not set
-          # CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
+          CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-ntpc-ca is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-cs is not set
           # CONFIG_PACKAGE_luci-i18n-ntpc-de is not set
@@ -5584,31 +5595,6 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-qos-vi is not set
           CONFIG_PACKAGE_luci-i18n-qos-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-qos-zh-tw is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-ca is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-cs is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-de is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-el is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-en is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-es is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-fr is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-he is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-hu is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-it is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-ja is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-ms is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-no is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-pl is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-pt is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-pt-br is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-ro is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-ru is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-sk is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-sv is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-tr is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-uk is not set
-          # CONFIG_PACKAGE_luci-i18n-samba-vi is not set
-          CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y
-          # CONFIG_PACKAGE_luci-i18n-samba-zh-tw is not set
           # CONFIG_PACKAGE_luci-i18n-samba4-ca is not set
           # CONFIG_PACKAGE_luci-i18n-samba4-cs is not set
           # CONFIG_PACKAGE_luci-i18n-samba4-de is not set
@@ -5639,6 +5625,31 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-simple-adblock-pt-br is not set
           # CONFIG_PACKAGE_luci-i18n-simple-adblock-ru is not set
           # CONFIG_PACKAGE_luci-i18n-simple-adblock-sv is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-ca is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-cs is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-de is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-el is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-en is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-es is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-fr is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-he is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-hu is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-it is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-ja is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-ms is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-no is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-pl is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-pt is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-pt-br is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-ro is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-ru is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-sk is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-sv is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-tr is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-uk is not set
+          # CONFIG_PACKAGE_luci-i18n-transmission-vi is not set
+          CONFIG_PACKAGE_luci-i18n-transmission-zh-cn=y
+          # CONFIG_PACKAGE_luci-i18n-transmission-zh-tw is not set
           CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-turboacc-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-udpxy-zh-cn=y
@@ -5823,10 +5834,10 @@ jobs:
           # CONFIG_PACKAGE_rtorrent is not set
           # CONFIG_PACKAGE_rtorrent-rpc is not set
           # CONFIG_PACKAGE_transmission-cli-openssl is not set
-          # CONFIG_PACKAGE_transmission-daemon-openssl is not set
+          CONFIG_PACKAGE_transmission-daemon-openssl=y
           # CONFIG_PACKAGE_transmission-remote-openssl is not set
           # CONFIG_PACKAGE_transmission-web is not set
-          # CONFIG_PACKAGE_transmission-web-control is not set
+          CONFIG_PACKAGE_transmission-web-control=y
           # end of BitTorrent
 
           #
@@ -6635,7 +6646,7 @@ jobs:
           # CONFIG_PACKAGE_kcptun-server is not set
           # CONFIG_PACKAGE_lighttpd is not set
           CONFIG_PACKAGE_microsocks=y
-          CONFIG_PACKAGE_naiveproxy=y
+          # CONFIG_PACKAGE_naiveproxy is not set
           # CONFIG_PACKAGE_nginx-all-module is not set
           # CONFIG_PACKAGE_nginx-mod-luci is not set
           CONFIG_PACKAGE_nginx-ssl=y
@@ -6703,9 +6714,9 @@ jobs:
           # CONFIG_PACKAGE_shadowsocks-libev-ss-rules is not set
           CONFIG_PACKAGE_shadowsocks-libev-ss-server=y
           # CONFIG_PACKAGE_shadowsocks-libev-ss-tunnel is not set
-          CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
+          # CONFIG_PACKAGE_shadowsocks-rust-sslocal is not set
           # CONFIG_PACKAGE_shadowsocks-rust-ssmanager is not set
-          CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
+          # CONFIG_PACKAGE_shadowsocks-rust-ssserver is not set
           # CONFIG_PACKAGE_shadowsocks-rust-ssservice is not set
           # CONFIG_PACKAGE_shadowsocks-rust-ssurl is not set
           # CONFIG_PACKAGE_shadowsocksr-libev-ssr-check is not set
@@ -6876,7 +6887,7 @@ jobs:
           # CONFIG_PACKAGE_httping is not set
           # CONFIG_PACKAGE_httping-nossl is not set
           # CONFIG_PACKAGE_https-dns-proxy is not set
-          CONFIG_PACKAGE_hysteria=y
+          # CONFIG_PACKAGE_hysteria is not set
           # CONFIG_PACKAGE_i2pd is not set
           # CONFIG_PACKAGE_ibrdtn-tools is not set
           # CONFIG_PACKAGE_ibrdtnd is not set
@@ -6949,7 +6960,7 @@ jobs:
           # CONFIG_PACKAGE_netstinky is not set
           # CONFIG_PACKAGE_nextdns is not set
           # CONFIG_PACKAGE_nfdump is not set
-          # CONFIG_PACKAGE_nlbwmon=y
+          CONFIG_PACKAGE_nlbwmon=y
           # CONFIG_PACKAGE_noddos is not set
           # CONFIG_PACKAGE_noping is not set
           # CONFIG_PACKAGE_npc is not set
@@ -7012,9 +7023,7 @@ jobs:
           # CONFIG_PACKAGE_rssileds is not set
           # CONFIG_PACKAGE_rsyslog is not set
           # CONFIG_PACKAGE_safe-search is not set
-          # CONFIG_PACKAGE_sagernet-core is not set
-          CONFIG_PACKAGE_samba36-server=y
-          CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
+          # CONFIG_PACKAGE_samba36-server is not set
           # CONFIG_PACKAGE_samba4-admin is not set
           # CONFIG_PACKAGE_samba4-client is not set
           CONFIG_PACKAGE_samba4-libs=y
@@ -7961,6 +7970,7 @@ jobs:
           # CONFIG_PACKAGE_uuidd is not set
           # CONFIG_PACKAGE_uuidgen is not set
           # CONFIG_PACKAGE_uvcdynctrl is not set
+          # CONFIG_PACKAGE_v2dat is not set
           # CONFIG_PACKAGE_v4l-utils is not set
           # CONFIG_PACKAGE_view1090 is not set
           # CONFIG_PACKAGE_viewadsb is not set
