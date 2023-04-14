@@ -5078,7 +5078,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-dump1090=m
           CONFIG_PACKAGE_luci-app-dynapoint=m
           CONFIG_PACKAGE_luci-app-e2guardian=m
-          CONFIG_PACKAGE_luci-app-easymesh=m
+          # CONFIG_PACKAGE_luci-app-easymesh is not set
           CONFIG_PACKAGE_luci-app-filetransfer=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-frpc=y
@@ -5485,8 +5485,6 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-dynapoint-ja is not set
           # CONFIG_PACKAGE_luci-i18n-dynapoint-pt-br is not set
           # CONFIG_PACKAGE_luci-i18n-dynapoint-ru is not set
-          CONFIG_PACKAGE_luci-i18n-easymesh-zh-cn=m
-          # CONFIG_PACKAGE_luci-i18n-easymesh-zh_Hans is not set
           CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-firewall-ca is not set
           # CONFIG_PACKAGE_luci-i18n-firewall-cs is not set
